@@ -50,7 +50,7 @@ def process_data():
                         temp.append(df_1.iloc[i]['rain'])
                     elif (i+1) % 7 == 0:
                         temp.append(df_1.iloc[i]['rain'])
-                        max_value = max(temp)
+                        max_value = sum(temp)
                         max_value_result.append(max_value)
                     else:
                         temp.append(df_1.iloc[i]['rain'])
@@ -60,16 +60,16 @@ def process_data():
                     temp = []
                     for i in range(df_1.shape[0] - remainder, df_1.shape[0]):
                         temp.append(df_1.iloc[i]['rain'])
-                    max_value = max(temp)
+                    max_value = sum(temp)
                     max_value_result.append(max_value)
 
                 
                 dict_result = {'max_rain_7day': max_value_result}
                 df_result = pd.DataFrame(dict_result) 
-                df_result.to_csv('rain_max_7day_result.csv') 
+                df_result.to_csv('rain_sum_max_7day_result.csv') 
                 showinfo(
                 title='ดำเนินการสำเร็จ',
-                message='ไฟล์ผลลัพธ์จะถูกจัดเก็บในโฟลเดอร์เดียวกันกับโปรแกรมในชื่อ rain_max_7day_result.csv'
+                message='ไฟล์ผลลัพธ์จะถูกจัดเก็บในโฟลเดอร์เดียวกันกับโปรแกรมในชื่อ rain_sum_max_7day_result.csv'
                 )
             else:
                 showinfo(
