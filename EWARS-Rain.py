@@ -7,7 +7,7 @@ import numpy as np
 
 # create the root window
 root = tk.Tk()
-root.title('Tkinter Open File Dialog')
+root.title('EWARS-Rain')
 root.resizable(False, False)
 root.geometry('300x150')
 
